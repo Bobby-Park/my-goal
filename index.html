@@ -3,7 +3,40 @@
 <Head>
     <title>Home</title>
     <meta charset="utf-8">
-       
+    <script>
+        var links = {setColor : function (color){
+            var alist = document.querySelectorAll('a');
+            var i = 0;
+            
+            while(i < alist.length){
+                alist[i].style.color = color;  
+                i = i+1; 
+            }
+        }
+    }
+        var body = { setBackGroundColor : function (color){
+            document.querySelector('body').style.backgroundColor = color;
+        }, setColor : function setColor(color){
+            document.querySelector('body').style.color = color;
+        }
+    }
+        
+        
+        function dayNightHandler(self){
+            var target = document.querySelector('body');
+        if(self.value === 'night'){
+            body.setBackGroundColor('black');
+            body.setColor('white');
+            self.value = 'day';
+            links.setColor('purple');}
+        else {
+            body.setBackGroundColor('white')
+            body.setColor('black');
+            self.value = 'night'
+            links.setColor('white')
+            }
+        }
+    </script>  
     <style>
         a {
         text-decoration: none;
@@ -17,7 +50,7 @@
            font-size: 60px;
         }
        .button {
-            background-color: #4CAF50;
+            background-color: #4caf50;
             border: none;
             color: white;
             padding: 15px 32px;
@@ -45,10 +78,10 @@
 <body>
     <h1>Home</h1>
     <div id="time">
-        <input type="button" value="night" onclick="document.querySelector('body').style.backgroundColor = 'black'; document.querySelector('body').style.color = 'white'" >
-        <input type="button" value="day" onclick="document.querySelector('body').style.backgroundColor = 'white'; document.querySelector('body').style.color = 'black'">
+    <input id="night_day" type="button" value="night" onclick="
+        dayNightHandler(this)">  
     </div>
-    <div>
+    <div id="handle">
         <a href="1.html" class="button">daily routine</a>
         <a href="2.html" class="button">meal planner</a>
         <a href="3.html" class="button">exercise plan</a>
