@@ -3,80 +3,12 @@
 <Head>
     <title>Home</title>
     <meta charset="utf-8">
-    <script>
-        var links = {setColor : function (color){
-            var alist = document.querySelectorAll('a');
-            var i = 0;
-            
-            while(i < alist.length){
-                alist[i].style.color = color;  
-                i = i+1; 
-            }
-        }
-    }
-        var body = { setBackGroundColor : function (color){
-            document.querySelector('body').style.backgroundColor = color;
-        }, setColor : function setColor(color){
-            document.querySelector('body').style.color = color;
-        }
-    }
-        
-        
-        function dayNightHandler(self){
-            var target = document.querySelector('body');
-        if(self.value === 'night'){
-            body.setBackGroundColor('black');
-            body.setColor('white');
-            self.value = 'day';
-            links.setColor('purple');}
-        else {
-            body.setBackGroundColor('white')
-            body.setColor('black');
-            self.value = 'night'
-            links.setColor('white')
-            }
-        }
-    </script>  
-    <style>
-        a {
-        text-decoration: none;
-        color: black;
-        font-size: 16x;
-        
-        
-        }
-       h1{
-           text-align: center;
-           font-size: 60px;
-        }
-       .button {
-            background-color: #4caf50;
-            border: none;
-            color: white;
-            padding: 15px 32px;
-            text-align: center;
-            text-decoration: none;
-            display: inline-block;
-            font-size: 24px;
-            margin: 4px 20px;
-            cursor: pointer;
-            border-radius: 2px;
-        }
-        div{
-            text-align: center;
-            margin-top: 12%;
-            
-        }
-        #padding4{
-            padding: 15px 46px;
-        }
-        #time{
-            text-align: center;
-        }
-    </style>
+    <link rel="stylesheet" href="css/indexStyle.css">
 </Head>
 <body>
+   
     <h1>Home</h1>
+    <h2  id="clock"></h2>
     <div id="time">
     <input id="night_day" type="button" value="night" onclick="
         dayNightHandler(this)">  
@@ -85,16 +17,11 @@
         <a href="1.html" class="button">daily routine</a>
         <a href="2.html" class="button">meal planner</a>
         <a href="3.html" class="button">exercise plan</a>
-        <a id="padding4" href="basic.html" class="button">laboratory</a>
+        <a id="padding4" class="button">laboratory</a>
 
     </div>     
     
 </p>
-
-
-
-
-
 
 
 
@@ -128,5 +55,8 @@
     </script>
     <!--End of Tawk.to Script-->
 </p>
+<script src="js/color.js"> </script>  
+<script src="js/laboratory.js"></script>
+<script src="js/clock.js"></script>
 </body>
 </html>
